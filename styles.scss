@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+$strongCyan: hsl(172, 67%, 45%);
+$veryDarkCyan: hsl(183, 100%, 15%);
+$grayishCyan: hsl(184, 14%, 56%);
+$lightGrayishCyan: hsl(185, 41%, 84%);
+$veryLightGrayishCyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+$formFont: 24px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+main {
+  background-color: $lightGrayishCyan;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  #billInput {
+    background-image: url("./images/icon-dollar.svg");
+    background-repeat: no-repeat;
+    background-position: 10px;
+  }
+  #numberOfPeople {
+    background-image: url("./images/icon-person.svg");
+    background-repeat: no-repeat;
+    background-position: 10px;
+  }
+  input {
+    margin-top: 0.5em;
+    padding: 0.5em;
+    text-align: right;
+    border-radius: 5px;
+    background: $veryLightGrayishCyan;
+  }
+
+  header {
+    margin-top: 2em;
+    letter-spacing: 0.6rem;
+    h1 {
+      color: $grayishCyan;
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+  }
+  section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2em;
+    min-height: 80vh;
+    width: 100%;
+    .col.left {
+      margin-top: 2em;
+      background-color: $white;
+      border-radius: 10px;
+      padding: 2em;
+      color: $veryDarkCyan;
+      font-weight: 800;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .row {
+        display: flex;
+        flex-direction: column;
+        &:not(:first-child) {
+          margin-top: 2em;
+        }
+      }
+      .buttons-selector {
+        margin-top: 0.5em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1em;
+        input {
+          text-align: center;
+          background-color: $veryLightGrayishCyan;
+        }
+        button {
+          outline: none;
+          background: $veryDarkCyan;
+          border: none;
+          color: $white;
+          padding: 0.3em 0.7em;
+          font-weight: 800;
+          border-radius: 5px;
+          box-shadow: 2px 2px 8px $veryLightGrayishCyan;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

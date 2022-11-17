@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+main {
+  background-color: hsl(185deg, 41%, 84%);
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+}
+main #billInput {
+  background-image: url("./images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 10px;
+}
+main #numberOfPeople {
+  background-image: url("./images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: 10px;
+}
+main input {
+  margin-top: 0.5em;
+  padding: 0.5em;
+  text-align: right;
+  border-radius: 5px;
+  background: hsl(189deg, 41%, 97%);
+}
+main header {
+  margin-top: 2em;
+  letter-spacing: 0.6rem;
+}
+main header h1 {
+  color: hsl(184deg, 14%, 56%);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+main section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2em;
+  min-height: 80vh;
+  width: 100%;
+}
+main section .col.left {
+  margin-top: 2em;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 10px;
+  padding: 2em;
+  color: hsl(183deg, 100%, 15%);
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main section .col.left .row {
+  display: flex;
+  flex-direction: column;
+}
+main section .col.left .row:not(:first-child) {
+  margin-top: 2em;
+}
+main section .col.left .buttons-selector {
+  margin-top: 0.5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1em;
+}
+main section .col.left .buttons-selector input {
+  text-align: center;
+  background-color: hsl(189deg, 41%, 97%);
+}
+main section .col.left .buttons-selector button {
+  outline: none;
+  background: hsl(183deg, 100%, 15%);
+  border: none;
+  color: hsl(0deg, 0%, 100%);
+  padding: 0.3em 0.7em;
+  font-weight: 800;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px hsl(189deg, 41%, 97%);
+  font-size: 20px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}/*# sourceMappingURL=styles.css.map */

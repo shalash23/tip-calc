@@ -12,7 +12,8 @@ main {
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 100vh;
+  min-height: auto;
+  min-width: 300px;
 }
 main #billInput {
   background-image: url("./images/icon-dollar.svg");
@@ -33,6 +34,7 @@ main input {
 }
 main header {
   margin-top: 2em;
+  margin-bottom: 1em;
   letter-spacing: 0.6rem;
 }
 main header h1 {
@@ -41,18 +43,18 @@ main header h1 {
   font-weight: 800;
 }
 main section {
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 8px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 2em;
-  min-height: 80vh;
+  grid-template-rows: 1fr 0.7fr;
+  gap: 1em;
+  min-height: auto;
   width: 100%;
 }
 main section .col.left {
-  margin-top: 2em;
-  background-color: hsl(0deg, 0%, 100%);
-  border-radius: 10px;
-  padding: 2em;
+  margin-top: 0.5em;
+  padding: 1em 2em;
   color: hsl(183deg, 100%, 15%);
   font-weight: 800;
   display: flex;
@@ -69,13 +71,30 @@ main section .col.left .row:not(:first-child) {
 main section .col.left .buttons-selector {
   margin-top: 0.5em;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
   gap: 1em;
 }
 main section .col.left .buttons-selector input {
   text-align: center;
-  background-color: hsl(189deg, 41%, 97%);
+  background-color: hsl(185deg, 41%, 84%);
+  min-width: 0;
+  outline: none;
+}
+main section .col.left .buttons-selector input::-moz-placeholder {
+  color: hsl(183deg, 100%, 15%);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+main section .col.left .buttons-selector input:-ms-input-placeholder {
+  color: hsl(183deg, 100%, 15%);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+main section .col.left .buttons-selector input::placeholder {
+  color: hsl(183deg, 100%, 15%);
+  font-size: 1.2rem;
+  font-weight: 800;
 }
 main section .col.left .buttons-selector button {
   outline: none;
@@ -88,6 +107,49 @@ main section .col.left .buttons-selector button {
   box-shadow: 2px 2px 8px hsl(189deg, 41%, 97%);
   font-size: 20px;
 }
+main section .col.left .buttons-selector button:active,
+main section .col.left .buttons-selector button :focus {
+  background: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+}
+
+.col.right {
+  padding: 0 2em;
+  min-width: 80%;
+  background-color: hsl(183deg, 100%, 15%);
+  border-radius: 10px;
+  margin: auto 2em;
+}
+.col.right .row {
+  padding: 1em 0;
+  display: flex;
+  justify-content: space-between;
+}
+.col.right .row button {
+  width: 100%;
+  padding: 0.4em;
+  background-color: hsl(172deg, 67%, 45%);
+  box-shadow: 0.5 0.5 4 0.5 hsl(184deg, 14%, 56%);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  outline: none;
+  color: hsl(183deg, 100%, 15%);
+  font-weight: 800;
+}
+.col.right .row h5 {
+  color: hsl(0deg, 0%, 100%);
+  font-size: 1rem;
+  font-weight: 800;
+}
+.col.right .row p {
+  color: hsl(185deg, 41%, 84%);
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+.col.right .row h4 {
+  color: hsl(172deg, 67%, 45%);
+  font-size: 1.3rem;
+}
 
 .attribution {
   font-size: 11px;
@@ -96,4 +158,60 @@ main section .col.left .buttons-selector button {
 
 .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    height: 100vh;
+    justify-content: space-evenly;
+    padding: 0;
+  }
+  main section {
+    box-shadow: 2px 2px 8px 2px hsl(184deg, 14%, 56%);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    max-width: 768px;
+    min-height: 50%;
+  }
+  main section input {
+    padding: 0.8em 0.6em;
+  }
+  main section .col.left .row:last-child {
+    margin-bottom: 1em;
+  }
+  main section .col.left .buttons-selector {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  footer {
+    padding-top: 3em;
+  }
+  .col.right {
+    min-width: 90%;
+    margin: 1.8em 1em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .col.right .row:first-child {
+    margin-top: 2em;
+  }
+  .col.right .row:nth-child(2) {
+    margin-bottom: auto;
+  }
+  .col.right .row h5 {
+    font-size: 1rem;
+  }
+  .col.right .row h4 {
+    font-size: 2.2rem;
+  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }/*# sourceMappingURL=styles.css.map */

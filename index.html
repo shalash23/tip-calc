@@ -35,7 +35,7 @@
               ><button class="btn">50%</button
               ><input
                 type="number"
-                step="0.1"
+                id="customValue"
                 class="btn"
                 placeholder="Custom"
               />
@@ -43,7 +43,7 @@
           </div>
           <div class="row">
             <label for="numberOfPeople">Number of People</label>
-            <input type="number" id="numberOfPeople" step="1" placeholder="1" />
+            <input type="number" id="numberOfPeople" step="1" placeholder="1" min="1"/>
           </div>
         </div>
         <div class="col right">
@@ -52,27 +52,26 @@
               <h5>Tip Amount</h5>
               <p>/Person</p>
             </div>
-            <h4>$4.27</h4>
+            <h4 id="tipAmount">$4.27</h4>
           </div>
           <div class="row">
             <div class="grid">
               <h5>Total</h5>
               <p>/Person</p>
             </div>
-            <h4>$43.27</h4>
+            <h4 id="totalPerPerson">$43.27</h4>
           </div>
-          <div class="row">
-            <button>RESET</button>
+          <div class="row last-child">
+            <button id="resetButton">RESET</button>
           </div>
         </div>
       </section>
+      <footer class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/shalash23">Mohamed Shalash</a>.
+      </footer>
     </main>
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
   </body>
 </html>
